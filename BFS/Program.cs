@@ -54,8 +54,8 @@ namespace BFS
 
                 foreach (var cItem in connectedNodes)
                 {
-                    var cNode = graph.Nodes.FirstOrDefault(a => a.Name == cItem && !a.IsVisited);
-                    if (cNode != null)
+                    //var cNode = graph.Nodes.Any(a => a.Name == cItem && !a.IsVisited);
+                    if (graph.Nodes.Any(a => a.Name == cItem && !a.IsVisited))
                     {
                         QueueItems.Enqueue(cItem);
                     }
